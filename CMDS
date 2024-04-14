@@ -1,0 +1,415 @@
+repeat wait() until game:IsLoaded()
+
+game:GetService("StarterGui"):SetCore("SendNotification",{
+    Title = "[SERVER]",  
+    Text = "Privated Cmds",
+    Icon = "rbxassetid://16590941074",
+    Duration = 2
+})
+wait(1)
+game:GetService("StarterGui"):SetCore("SendNotification",{  
+    Title = "[SERVER]",     
+    Text = "Made by Oppenheimer",
+    Icon = "rbxassetid://16590941074"
+})
+wait(1)
+game:GetService("StarterGui"):SetCore("SendNotification",{  
+    Title = "[SERVER]",     
+    Text = "Type cmds for get started!",
+    Icon = "rbxassetid://16590941074"
+})
+
+local TweenService = game:GetService("TweenService")
+local Players = game:GetService("Players")
+local LocalPlayer = Players.LocalPlayer
+local currentCFrame = LocalPlayer.Character.HumanoidRootPart.CFrame
+local index = 1
+local Pos = {
+    CFrame.new(-338, 33, -6273),
+    CFrame.new(-445, 31, -6667),
+    CFrame.new(-567, 32, -6653),
+    CFrame.new(-799, 46, -6547),
+    CFrame.new(-871, 33, -6458),
+    CFrame.new(-846, 74, -6365),
+    CFrame.new(-806, 50, -6237),
+    CFrame.new(-663, 53, -6229),
+    CFrame.new(-564, 42, -6149),
+    CFrame.new(-454, 42, -6021),
+    CFrame.new(-312, 33, -6107),
+    CFrame.new(-346, 51, -6281),
+    CFrame.new(-319, 51, -6518),
+    CFrame.new(-547, 49, -6519),
+    CFrame.new(-780, 32, -6332),
+    CFrame.new(-721, 47, -6188),
+    CFrame.new(-668, 29, -6537),
+    CFrame.new(-658, 29, -6614),
+    CFrame.new(-638, 29, -6676),
+    CFrame.new(-702, 29, -6692),
+    CFrame.new(-766, 26, -6680)
+}
+
+local function onPlayerChatted(message)
+    local lowercaseMessage = string.lower(message)
+
+    if lowercaseMessage == "hr" then
+        game.Players.LocalPlayer.Character:BreakJoints()
+        local Players = game:GetService("Players")
+        local LocalPlayer = Players.LocalPlayer
+        local currentCFrame = LocalPlayer.Character.HumanoidRootPart.CFrame
+        local heartbeatConn = game.RunService.Heartbeat:connect(function()
+            LocalPlayer.Character.HumanoidRootPart.CFrame = currentCFrame
+        end)
+        wait(6)
+        heartbeatConn:Disconnect()
+
+    elseif lowercaseMessage == "cmds" then
+        print("hr")
+        print("fg")
+        print("hs")
+        print("ag")
+        print("rj")
+        print("slot1")
+        print("slot2")
+        print("slot3")
+        print("sad")
+        print("lk")
+        print("lgtb")
+        print("nuke")
+        print("ns")
+        print("disco ball")
+        print("lagger")
+        print("laggeroff")
+        print("kt/ user")
+        print("ktoff")
+        print("tp/ user")
+    
+    elseif lowercaseMessage == "lagger" then
+        spawn(function()
+            game:GetService("RunService").Heartbeat:Connect(function()
+                game.Players.LocalPlayer.Character.Humanoid:EquipTool(game.Players.LocalPlayer.Backpack["Chain Destructo Disk"])
+                task.wait(.5)
+                game.Players.LocalPlayer.Character["Chain Destructo Disk"]:Activate()
+                task.wait(.5)
+                game.Players.LocalPlayer.Character["Chain Destructo Disk"]:Deactivate()
+            end)
+        end)   
+        game:GetService("RunService").Heartbeat:Connect(function()
+            task.wait()
+            for _, v in pairs(game.Workspace:GetChildren()) do
+                if v:FindFirstChild("Ki") and v:FindFirstChild("Mesh") then
+                    v.CFrame = Pos[index]
+                end
+            end
+            for _, c in pairs(game.Players.LocalPlayer.Character:GetChildren()) do
+                if c:FindFirstChild("Ki") and c:FindFirstChild("Mesh") then
+                    c.CFrame = Pos[index]
+                end
+            end
+            index = index % #Pos + 1
+        end)
+    elseif lowercaseMessage == "laggeroff" then
+        game:GetService("TeleportService"):Teleport(game.PlaceId)
+    elseif lowercaseMessage == "ns" then
+        local cooldowns = {"Action","Attacking","SuperAction","Activity","Using","hyper","Hyper","Tele","tele","heavy","KiBlasted","Killed","Slow","Blocked","NotHardBack","BodyVelocity", "KnockBacked", "NotHardBack", "creator", "Throw", "Flip","xx","BStun","Dodging","RightGrip","ui","tpp","Blocked"}
+        game:GetService("RunService").RenderStepped:connect(function()
+            for _, v in pairs(game.Players.LocalPlayer.Character:GetDescendants()) do
+                if table.find(cooldowns,v.Name) then
+                    v:Destroy()
+                end
+            end
+        end)
+
+    elseif lowercaseMessage == "disco ball" then
+        local newBlock = Instance.new("Part")
+
+newBlock.Size = Vector3.new(0.7, 0.7, 0.7) -- Tamaño del bloque
+newBlock.Position = Vector3.new(0, 10, 0)  
+newBlock.Anchored = true  
+newBlock.BrickColor = BrickColor.new("Toothpaste") 
+newBlock.CanCollide = false
+newBlock.Shape = "Ball"
+newBlock.Material = "Neon"
+
+newBlock.Parent = game.Workspace.Live[game.Players.LocalPlayer.Name]
+
+game.Workspace.Live[game.Players.LocalPlayer.Name].Part.Name = "Ball"
+
+task.wait(1)
+local newBlock = Instance.new("Part")
+
+newBlock.Size = Vector3.new(1, 1, 1)  
+newBlock.Position = Vector3.new(0, 10, 0)  
+newBlock.Anchored = true 
+newBlock.BrickColor = BrickColor.new("Hot Pink")
+newBlock.CanCollide = false
+newBlock.Rotation = Vector3.new(86.62100219726562, 17.051000595092773, -97.98999786376953)
+newBlock.Material = "Neon"
+
+
+local mesh = Instance.new("SpecialMesh")
+mesh.MeshType = "Sphere"
+mesh.MeshId = "rbxassetid://9345909138"
+mesh.Scale = Vector3.new(0.7, 0.7, 0.7)
+mesh.Parent = newBlock  
+
+
+newBlock.Parent = game.Workspace.Live[game.Players.LocalPlayer.Name]
+
+game.Workspace.Live[game.Players.LocalPlayer.Name].Part.Name = "FakeHalo"
+
+
+local Player = game:GetService("Players").LocalPlayer
+local Orbiter = game.Workspace.Live:FindFirstChild(Player.Name):FindFirstChild("FakeHalo") 
+local Ball = game.Workspace.Live:FindFirstChild(Player.Name):FindFirstChild("Ball")
+
+local orbitRadius = 1.7 
+local orbitSpeed = 2  
+
+local function OrbitAroundPlayer()
+    while true do
+        task.wait()
+        
+        local angle = tick() * orbitSpeed 
+        local offsetX = math.cos(angle) * orbitRadius
+        local offsetZ = math.sin(angle) * orbitRadius  
+        
+        local playerPosition = Player.Character and Player.Character.HumanoidRootPart and Player.Character.HumanoidRootPart.Position
+        if playerPosition then
+            local headHeight = (Player.Character.Head.CFrame - Player.Character.HumanoidRootPart.Position).Y
+            Orbiter.Position = playerPosition + Vector3.new(offsetX, headHeight, offsetZ) 
+            Orbiter.Mesh.MeshType = "Sphere"
+            Ball.Position = playerPosition + Vector3.new(offsetX, headHeight, offsetZ)
+        end
+    end
+end
+
+OrbitAroundPlayer()
+    
+    elseif lowercaseMessage == "nuke" then
+        game.Players.LocalPlayer.Character.Humanoid:EquipTool(game.Players.LocalPlayer.Backpack["Heat Dome Attack"])
+        task.wait(.1)
+        game.Players.LocalPlayer.Character["Heat Dome Attack"]:Activate()
+        task.wait(.1)
+        game.Players.LocalPlayer.Character["Heat Dome Attack"]:Deactivate()
+    
+    elseif lowercaseMessage == "lgtb" then
+        local plr = game.Players.LocalPlayer
+game.Workspace.Live[plr.name].Parent = game.Workspace.Effects
+wait()
+local args1 = game:GetService("Workspace").FriendlyNPCs["Hair Stylist"]
+game:GetService("Players").LocalPlayer.Backpack.ServerTraits.ChatStart:FireServer(args1)
+wait(0.30)
+local args = {
+    [1] = {
+        [1] = "Yes",
+    },
+}
+game:GetService("Players").LocalPlayer.Backpack.ServerTraits.ChatAdvance:FireServer(unpack(args))
+
+game:GetService("RunService").RenderStepped:connect(function()
+    game:GetService("Players").LocalPlayer.PlayerGui.Setup.Enabled = false
+    game:GetService("Players").LocalPlayer.Backpack.HairScript.RemoteEvent:FireServer(game:GetService("Players").LocalPlayer.PlayerGui.Setup.Frame.Side.HairColor,"up")
+    game:GetService("Players").LocalPlayer.Backpack.HairScript.RemoteEvent:FireServer(game:GetService("Players").LocalPlayer.PlayerGui.Setup.Frame.Side.Skin,"up")
+    game:GetService("Players").LocalPlayer.Backpack.HairScript.RemoteEvent:FireServer(game:GetService("Players").LocalPlayer.PlayerGui.Setup.Frame.Side.Hair,"up")
+end)
+
+    elseif lowercaseMessage == "fg" then
+    game:GetService("Players").LocalPlayer.Backpack.ServerTraits.Input:FireServer(unpack( {[1] = {[1] = "decrease"},[2] = true}))
+game:GetService("Players").LocalPlayer.Backpack.ServerTraits.Input:FireServer(unpack( {[1] = {[1] = "decrease"},[2] = true}))
+game:GetService("Players").LocalPlayer.Backpack.ServerTraits.Input:FireServer(unpack( {[1] = {[1] = "decrease"},[2] = true}))
+game:GetService("Players").LocalPlayer.Backpack.ServerTraits.Input:FireServer(unpack( {[1] = {[1] = "decrease"},[2] = true}))
+game:GetService("Players").LocalPlayer.Backpack.ServerTraits.Input:FireServer(unpack( {[1] = {[1] = "decrease"},[2] = true}))
+game:GetService("Players").LocalPlayer.Backpack.ServerTraits.Input:FireServer(unpack( {[1] = {[1] = "decrease"},[2] = true}))
+game:GetService("Players").LocalPlayer.Backpack.ServerTraits.Input:FireServer(unpack( {[1] = {[1] = "decrease"},[2] = true}))
+game:GetService("Players").LocalPlayer.Backpack.ServerTraits.Input:FireServer(unpack( {[1] = {[1] = "decrease"},[2] = true}))
+game:GetService("Players").LocalPlayer.Backpack.ServerTraits.Input:FireServer(unpack( {[1] = {[1] = "decrease"},[2] = true}))
+game:GetService("Players").LocalPlayer.Backpack.ServerTraits.Input:FireServer(unpack( {[1] = {[1] = "decrease"},[2] = true}))
+game:GetService("Players").LocalPlayer.Backpack.ServerTraits.Input:FireServer(unpack( {[1] = {[1] = "decrease"},[2] = true}))
+game:GetService("Players").LocalPlayer.Backpack.ServerTraits.Input:FireServer(unpack( {[1] = {[1] = "decrease"},[2] = true}))
+game:GetService("Players").LocalPlayer.Backpack.ServerTraits.Input:FireServer(unpack( {[1] = {[1] = "decrease"},[2] = true}))
+game:GetService("Players").LocalPlayer.Backpack.ServerTraits.Input:FireServer(unpack( {[1] = {[1] = "decrease"},[2] = true}))
+game:GetService("Players").LocalPlayer.Backpack.ServerTraits.Input:FireServer(unpack( {[1] = {[1] = "decrease"},[2] = true}))
+game:GetService("Players").LocalPlayer.Backpack.ServerTraits.Input:FireServer(unpack( {[1] = {[1] = "decrease"},[2] = true}))
+game:GetService("Players").LocalPlayer.Backpack.ServerTraits.Input:FireServer(unpack( {[1] = {[1] = "decrease"},[2] = true}))
+game:GetService("Players").LocalPlayer.Backpack.ServerTraits.Input:FireServer(unpack( {[1] = {[1] = "decrease"},[2] = true}))
+game:GetService("Players").LocalPlayer.Backpack.ServerTraits.Input:FireServer(unpack( {[1] = {[1] = "decrease"},[2] = true}))
+game:GetService("Players").LocalPlayer.Backpack.ServerTraits.Input:FireServer(unpack( {[1] = {[1] = "decrease"},[2] = true}))
+game:GetService("Players").LocalPlayer.Backpack.ServerTraits.Input:FireServer(unpack( {[1] = {[1] = "decrease"},[2] = true}))
+game:GetService("Players").LocalPlayer.Backpack.ServerTraits.Input:FireServer(unpack( {[1] = {[1] = "decrease"},[2] = true}))
+game:GetService("ReplicatedStorage").ResetChar:FireServer()
+wait(0.4)
+local args = {
+    [1] = "h"
+}
+ 
+game:GetService("Players").LocalPlayer.Backpack.ServerTraits.Transform:FireServer(unpack(args))
+wait(0.4)
+game:GetService("Players").LocalPlayer.Backpack.ServerTraits.Input:FireServer(unpack( {[1] = {[1] = "increase"},[2] = true}))
+game:GetService("Players").LocalPlayer.Backpack.ServerTraits.Input:FireServer(unpack( {[1] = {[1] = "increase"},[2] = true}))
+game:GetService("Players").LocalPlayer.Backpack.ServerTraits.Input:FireServer(unpack( {[1] = {[1] = "increase"},[2] = true}))
+game:GetService("Players").LocalPlayer.Backpack.ServerTraits.Input:FireServer(unpack( {[1] = {[1] = "increase"},[2] = true}))
+game:GetService("Players").LocalPlayer.Backpack.ServerTraits.Input:FireServer(unpack( {[1] = {[1] = "increase"},[2] = true}))
+game:GetService("Players").LocalPlayer.Backpack.ServerTraits.Input:FireServer(unpack( {[1] = {[1] = "increase"},[2] = true}))
+game:GetService("Players").LocalPlayer.Backpack.ServerTraits.Input:FireServer(unpack( {[1] = {[1] = "increase"},[2] = true}))
+game:GetService("Players").LocalPlayer.Backpack.ServerTraits.Input:FireServer(unpack( {[1] = {[1] = "increase"},[2] = true}))
+game:GetService("Players").LocalPlayer.Backpack.ServerTraits.Input:FireServer(unpack( {[1] = {[1] = "increase"},[2] = true}))
+game:GetService("Players").LocalPlayer.Backpack.ServerTraits.Input:FireServer(unpack( {[1] = {[1] = "increase"},[2] = true}))
+game:GetService("Players").LocalPlayer.Backpack.ServerTraits.Input:FireServer(unpack( {[1] = {[1] = "increase"},[2] = true}))
+game:GetService("Players").LocalPlayer.Backpack.ServerTraits.Input:FireServer(unpack( {[1] = {[1] = "increase"},[2] = true}))
+game:GetService("Players").LocalPlayer.Backpack.ServerTraits.Input:FireServer(unpack( {[1] = {[1] = "increase"},[2] = true}))
+game:GetService("Players").LocalPlayer.Backpack.ServerTraits.Input:FireServer(unpack( {[1] = {[1] = "increase"},[2] = true}))
+game:GetService("Players").LocalPlayer.Backpack.ServerTraits.Input:FireServer(unpack( {[1] = {[1] = "increase"},[2] = true}))
+game:GetService("Players").LocalPlayer.Backpack.ServerTraits.Input:FireServer(unpack( {[1] = {[1] = "increase"},[2] = true}))
+game:GetService("Players").LocalPlayer.Backpack.ServerTraits.Input:FireServer(unpack( {[1] = {[1] = "increase"},[2] = true}))
+game:GetService("Players").LocalPlayer.Backpack.ServerTraits.Input:FireServer(unpack( {[1] = {[1] = "increase"},[2] = true}))
+game:GetService("Players").LocalPlayer.Backpack.ServerTraits.Input:FireServer(unpack( {[1] = {[1] = "increase"},[2] = true}))
+game:GetService("Players").LocalPlayer.Backpack.ServerTraits.Input:FireServer(unpack( {[1] = {[1] = "increase"},[2] = true}))
+game:GetService("Players").LocalPlayer.Backpack.ServerTraits.Input:FireServer(unpack( {[1] = {[1] = "increase"},[2] = true}))
+game:GetService("Players").LocalPlayer.Backpack.ServerTraits.Input:FireServer(unpack( {[1] = {[1] = "increase"},[2] = true}))
+    
+    elseif lowercaseMessage == "hs" then
+        game.Players.LocalPlayer.Backpack.ServerTraits.ChatStart:FireServer(unpack({[1] = workspace.FriendlyNPCs:FindFirstChild("Hair Stylist")}))
+      wait(.3)
+      game.Players.LocalPlayer.Backpack.ServerTraits.ChatAdvance:FireServer(unpack({[1] = {[1] = "Yes"}}))
+      wait(.3)
+      game:GetService("Players").LocalPlayer.Backpack:WaitForChild("HairScript").RemoteEvent:FireServer(unpack({[1] = "woah"}))
+      local Players = game:GetService("Players")
+        local LocalPlayer = Players.LocalPlayer
+        local currentCFrame = LocalPlayer.Character.HumanoidRootPart.CFrame
+        local heartbeatConn = game.RunService.Heartbeat:connect(function()
+            LocalPlayer.Character.HumanoidRootPart.CFrame = currentCFrame
+        end)
+        wait(2.8)
+        heartbeatConn:Disconnect()
+    elseif lowercaseMessage == "ag" then
+    local plr = game.Players.LocalPlayer
+        while wait() do
+            pcall(function()
+                game:GetService("Workspace").Live[plr.Name].LowerTorso.BodyVelocity:Destroy()
+            end)
+        end
+
+    elseif lowercaseMessage == "rj" then
+        game:GetService("TeleportService"):Teleport(game.PlaceId)
+
+    elseif lowercaseMessage == "slot1" then
+        local Players = game:GetService("Players")
+        local LocalPlayer = Players.LocalPlayer
+        local currentCFrame = LocalPlayer.Character.HumanoidRootPart.CFrame
+        local heartbeatConn = game.RunService.Heartbeat:connect(function()
+            LocalPlayer.Character.HumanoidRootPart.CFrame = currentCFrame
+        end)
+        game.Players.LocalPlayer.Backpack.ServerTraits.ChatStart:FireServer(unpack({[1] = workspace.FriendlyNPCs:FindFirstChild("Character Slot Changer")}))
+        wait(.3)
+        game.Players.LocalPlayer.Backpack.ServerTraits.ChatAdvance:FireServer(unpack({[1] = {[1] = "Yes"}}))
+        wait(.3)
+        game.Players.LocalPlayer.Backpack.ServerTraits.ChatAdvance:FireServer(unpack({[1] = {[1] = "k"}}))
+        wait(.3)
+        game.Players.LocalPlayer.Backpack.ServerTraits.ChatAdvance:FireServer(unpack({[1] = {[1] = "Yes"}}))
+        wait(.3)
+        game.Players.LocalPlayer.Backpack.ServerTraits.ChatAdvance:FireServer(unpack({[1] = {[1] = ("Slot1")}}))
+        wait(4.5)
+        heartbeatConn:Disconnect()
+    elseif lowercaseMessage == "slot2" then
+        local Players = game:GetService("Players")
+        local LocalPlayer = Players.LocalPlayer
+        local currentCFrame = LocalPlayer.Character.HumanoidRootPart.CFrame
+        local heartbeatConn = game.RunService.Heartbeat:connect(function()
+            LocalPlayer.Character.HumanoidRootPart.CFrame = currentCFrame
+        end)
+        game.Players.LocalPlayer.Backpack.ServerTraits.ChatStart:FireServer(unpack({[1] = workspace.FriendlyNPCs:FindFirstChild("Character Slot Changer")}))
+        wait(.3)
+        game.Players.LocalPlayer.Backpack.ServerTraits.ChatAdvance:FireServer(unpack({[1] = {[1] = "Yes"}}))
+        wait(.3)
+        game.Players.LocalPlayer.Backpack.ServerTraits.ChatAdvance:FireServer(unpack({[1] = {[1] = "k"}}))
+        wait(.3)
+        game.Players.LocalPlayer.Backpack.ServerTraits.ChatAdvance:FireServer(unpack({[1] = {[1] = "Yes"}}))
+        wait(.3)
+        game.Players.LocalPlayer.Backpack.ServerTraits.ChatAdvance:FireServer(unpack({[1] = {[1] = ("Slot2")}}))
+        wait(4.5)
+        heartbeatConn:Disconnect()
+    elseif lowercaseMessage == "slot3" then
+        local Players = game:GetService("Players")
+        local LocalPlayer = Players.LocalPlayer
+        local currentCFrame = LocalPlayer.Character.HumanoidRootPart.CFrame
+        local heartbeatConn = game.RunService.Heartbeat:connect(function()
+            LocalPlayer.Character.HumanoidRootPart.CFrame = currentCFrame
+        end)
+        game.Players.LocalPlayer.Backpack.ServerTraits.ChatStart:FireServer(unpack({[1] = workspace.FriendlyNPCs:FindFirstChild("Character Slot Changer")}))
+        wait(.3)
+        game.Players.LocalPlayer.Backpack.ServerTraits.ChatAdvance:FireServer(unpack({[1] = {[1] = "Yes"}}))
+        wait(.3)
+        game.Players.LocalPlayer.Backpack.ServerTraits.ChatAdvance:FireServer(unpack({[1] = {[1] = "k"}}))
+        wait(.3)
+        game.Players.LocalPlayer.Backpack.ServerTraits.ChatAdvance:FireServer(unpack({[1] = {[1] = "Yes"}}))
+        wait(.3)
+        game.Players.LocalPlayer.Backpack.ServerTraits.ChatAdvance:FireServer(unpack({[1] = {[1] = ("Slot3")}}))
+        wait(4.5)
+        heartbeatConn:Disconnect()
+    elseif lowercaseMessage == "sad" then
+        player = game.Players.LocalPlayer
+        if game.Workspace.Live[player.Name].Animate.idle:FindFirstChild("Animation1") then
+            game.Workspace.Live[player.Name].Animate.idle:FindFirstChild("Animation1").AnimationId = "rbxassetid://5302520609"
+        if game.Workspace.Live[player.Name].Animate.walk:FindFirstChild("RunAnim") then
+            game.Workspace.Live[player.Name].Animate.walk:FindFirstChild("RunAnim").AnimationId = "rbxassetid://5302520609"
+        if game.Workspace.Live[player.Name].Animate.jump:FindFirstChild("JumpAnim") then
+            game.Workspace.Live[player.Name].Animate.jump:FindFirstChild("JumpAnim").AnimationId = "rbxassetid://5302520609"
+        if game.Workspace.Live[player.Name].Animate.climb:FindFirstChild("ClimbAnim") then
+            game.Workspace.Live[player.Name].Animate.climb:FindFirstChild("ClimbAnim").AnimationId = "rbxassetid://5302520609"
+        if game.Workspace.Live[player.Name].Animate.fall:FindFirstChild("FallAnim") then
+            game.Workspace.Live[player.Name].Animate.fall:FindFirstChild("FallAnim").AnimationId = "rbxassetid://5302520609"
+        if game.Workspace.Live[player.Name].Animate.sit:FindFirstChild("SitAnim") then
+            game.Workspace.Live[player.Name].Animate.sit:FindFirstChild("SitAnim").AnimationId = "rbxassetid://5302520609"
+        if game.Workspace.Live[player.Name].Animate.toonone:FindFirstChild("ToolNoneAnim") then
+            game.Workspace.Live[player.Name].Animate.toonone:FindFirstChild("ToolNoneAnim").AnimationId = "rbxassetid://5302520609"
+        if game.Workspace.Live[player.Name].Animate.swim:FindFirstChild("Swim") then
+            game.Workspace.Live[player.Name].Animate.swim:FindFirstChild("Swim").AnimationId = "rbxassetid://5302520609"
+        if game.Workspace.Live[player.Name].Animate.swimidle:FindFirstChild("Swimidle") then
+            game.Workspace.Live[player.Name].Animate.swimidle:FindFirstChild("Swimidle").AnimationId = "rbxassetid://5302520609"
+        if game.Workspace.Live[player.Name].Animate.idle:FindFirstChild("Animation2") then
+            game.Workspace.Live[player.Name].Animate.idle:FindFirstChild("Animation2").AnimationId = "rbxassetid://5302520609"
+    end end end end end end end end end end
+
+    elseif lowercaseMessage == "lk" then
+     game:GetService("TweenService"):Create(
+  game.Players.LocalPlayer.Character.HumanoidRootPart,
+  TweenInfo.new(1.2, Enum.EasingStyle.Linear, Enum.EasingDirection.Out),
+  {CFrame = CFrame.new(2479, 3945, -2274)}
+  ):Play()
+
+    elseif lowercaseMessage:sub(1, 2) == "tp" then
+        local playerNamePart = lowercaseMessage:sub(4)
+
+        -- Buscar un jugador cuyo nombre contenga la parte especificada
+        for _, player in ipairs(game.Players:GetPlayers()) do
+            if string.find(string.lower(player.Name), playerNamePart, 1, true) then
+                -- Calcular el punto de destino para el Tween
+                local destination = player.Character.HumanoidRootPart.Position
+                local targetCFrame = CFrame.new(destination)
+
+                -- Crear el Tween
+                local tweenInfo = TweenInfo.new(
+                    1, -- Duración del Tween en segundos
+                    Enum.EasingStyle.Linear, -- Estilo de suavizado
+                    Enum.EasingDirection.InOut, -- Dirección de suavizado
+                    0, -- Sin repetición
+                    false -- Sin repetición inversa
+                )
+
+                local tween = TweenService:Create(game.Players.LocalPlayer.Character.HumanoidRootPart, tweenInfo, {CFrame = targetCFrame})
+
+                -- Manejar el evento de finalización del Tween
+                tween.Completed:Connect(function()
+                    tween:Destroy() -- Detener el Tween
+                end)
+
+                -- Reproducir el Tween
+                tween:Play()
+
+                return
+            end
+        end
+    end
+end
+
+game.Players.LocalPlayer.Chatted:Connect(onPlayerChatted)
